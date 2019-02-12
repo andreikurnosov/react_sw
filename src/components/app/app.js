@@ -4,8 +4,6 @@ import RandomPlanet from '../random-planet';
 import ErrorButton from '../error-button';
 import PeoplePage from '../people-page';
 
-// import ItemList from '../item-list/item-list';
-// import PersonDetails from '../person-details/person-details';
 import SwapiService from '../../services/swapi-service';
 
 import './app.css';
