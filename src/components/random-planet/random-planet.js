@@ -14,6 +14,18 @@ export default class RandomPlanet extends Component {
     updateInterval: 10000
   };
 
+  static propTypes = {
+    updateInterval: (props, propName, componentName) => {
+      const value = props[propName];
+
+      if (typeof value === 'number' && !isNaN(value)) {
+        return null
+      }
+
+      return new TypeError(`${componentName}: ${propName} must be number`);
+    }
+  }
+
   swapiService = new SwapiService();
 
   state = {
@@ -81,7 +93,7 @@ const PlanetView = ({ planet }) => {
     <React.Fragment>
       <img
         className="planet-image"
-        src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`}
+        src={`https://picsum.photos/200?image=${id}`}
         alt="Some Planet"
       />
       <div>
